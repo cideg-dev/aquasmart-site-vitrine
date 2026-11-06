@@ -16,6 +16,9 @@
     document.querySelectorAll('[data-fr][data-en]').forEach(element => {
       element.innerHTML = element.getAttribute(`data-${next}`);
     });
+    document.querySelectorAll('[data-alt-fr][data-alt-en]').forEach(element => {
+      element.alt = element.getAttribute(`data-alt-${next}`);
+    });
     document.querySelectorAll('[data-placeholder-fr][data-placeholder-en]').forEach(element => {
       element.placeholder = element.getAttribute(`data-placeholder-${next}`);
     });

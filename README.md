@@ -11,8 +11,9 @@ Site vitrine bilingue (français / anglais) d’AquaSmart Control SARL, conçu p
 - `script.js` — menu mobile, changement de langue, année automatique et formulaire de contact.
 - `assets/favicon.svg` — icône de l’onglet du navigateur.
 - `assets/logo-aquasmart.png` — logo de l’entreprise.
+- `assets/prototype-installe.jpg` et les cinq photos de composants dans `assets/` — images extraites des pages 20 à 25 du plan d’affaires fourni.
 
-Le site est une vitrine statique. Le formulaire ouvre l’application de messagerie du visiteur avec un brouillon prérempli : aucun message n’est stocké ou envoyé par un serveur. Les fonctionnalités AquaSmart présentées sont des objectifs de conception, pas des performances déjà validées.
+Le site est une vitrine statique. Le formulaire ouvre l’application de messagerie du visiteur avec un brouillon prérempli : aucun message n’est stocké ou envoyé par un serveur. Les photos montrent les visuels du prototype présentés dans le plan d’affaires ; les performances et les fonctionnalités décrites restent à valider.
 
 ## Prévisualiser sur son ordinateur
 
@@ -33,7 +34,7 @@ Ouvrez ensuite <http://localhost:8000>. Le site fonctionne sans installation. Le
 
 ## Publier avec GitHub Pages
 
-Le workflow autonome [`.github/workflows/deploy-site.yml`](./.github/workflows/deploy-site.yml) publie le site après un push sur `main` ou `master`. Il peut aussi être lancé manuellement depuis l’onglet **Actions**. Dans le dépôt principal AquaSmart, le workflow [`../.github/workflows/deploy-site.yml`](../.github/workflows/deploy-site.yml) publie également ce dossier.
+Le workflow autonome [`.github/workflows/deploy-site.yml`](./.github/workflows/deploy-site.yml) publie le site après un push sur `main` ou `master`. Il peut aussi être lancé manuellement depuis l’onglet **Actions**.
 
 1. Envoyez le dépôt sur GitHub.
 2. Ouvrez **Settings > Pages** et sélectionnez **GitHub Actions** comme source de publication.
