@@ -15,22 +15,26 @@ Site vitrine bilingue (français / anglais) d’AquaSmart Control SARL, conçu p
 
 Le site est une vitrine statique. Le formulaire ouvre l’application de messagerie du visiteur avec un brouillon prérempli : aucun message n’est stocké ou envoyé par un serveur. Les photos montrent les visuels du prototype présentés dans le plan d’affaires ; les performances et les fonctionnalités décrites restent à valider.
 
+La stratégie de vente, les canaux commerciaux et les tarifs de référence proviennent du plan d’affaires et du plan financier fournis : 60 000 FCFA pour le dispositif, 15 000 FCFA comme repère de base d’installation, et maintenance annuelle sur devis. Le total dispositif + installation (75 000 FCFA) est indicatif, l’installation pouvant varier selon le site et l’équipement. Les modalités de paiement seront précisées sur le devis, car les documents ne fixent pas de moyen ni d’échéancier standard.
+
 ## Prévisualiser sur son ordinateur
 
 Depuis la racine du dépôt, lancez :
 
 ```powershell
-python -m http.server 8000 --directory aquasmart_site
+python -m http.server 8000
 ```
 
 Ouvrez ensuite <http://localhost:8000>. Le site fonctionne sans installation. Les polices système sont utilisées pour éviter les requêtes vers un service tiers.
 
 ## Configurer avant publication
 
-1. Dans `script.js`, renseignez `contact.email` et, si souhaité, `contact.phone` avec des coordonnées professionnelles destinées à être publiques.
-2. Vérifiez le nom de l’entreprise, l’adresse indiquée (Natitingou, Atacora, Bénin), les textes et le logo. Ne publiez que des informations exactes et autorisées.
-3. Gardez à jour la mention « phase de conception et de prototypage » jusqu’à ce que les essais permettent de confirmer un autre état d’avancement.
-4. Le formulaire ne peut pas fonctionner tant que `contact.email` n’est pas renseigné. Il nécessite un logiciel de messagerie configuré chez le visiteur.
+1. Vérifiez que l’adresse `aquasmartcontrole@gmail.com`, le numéro `+229 01 64 28 51 72` et le lien WhatsApp associé sont toujours les coordonnées professionnelles à publier.
+2. Vérifiez le nom de l’entreprise, l’adresse indiquée (Natitingou, Atacora, Bénin), les textes, les tarifs prévisionnels et le logo. Ne publiez que des informations exactes et autorisées.
+3. Le montant annuel de maintenance reste à confirmer ; le site indique donc « sur devis ».
+4. Les conditions de règlement devront être confirmées sur les devis avant la vente ; le site n’annonce pas de mode ni de calendrier de paiement non validé.
+5. Gardez à jour la mention « phase de conception et de prototypage » jusqu’à ce que les essais permettent de confirmer un autre état d’avancement.
+6. Le formulaire nécessite un logiciel de messagerie configuré chez le visiteur.
 
 ## Publier avec GitHub Pages
 

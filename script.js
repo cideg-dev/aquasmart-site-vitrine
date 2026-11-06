@@ -5,8 +5,9 @@
   const contactForm = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');
   const contact = {
-    email: '',
-    phone: ''
+    email: 'aquasmartcontrole@gmail.com',
+    phone: '+229 01 64 28 51 72',
+    whatsapp: '2290164285172'
   };
   let language = document.documentElement.lang === 'en' ? 'en' : 'fr';
 
@@ -52,7 +53,14 @@
     companyPhone,
     `tel:${companyPhone.replace(/[^\d+]/g, '')}`
   );
-  document.getElementById('contact-pending').hidden = hasEmail || hasPhone;
+  const hasWhatsapp = setContactMethod(
+    'company-whatsapp',
+    contact.whatsapp,
+    `https://wa.me/${contact.whatsapp}`
+  );
+  const whatsappLink = document.querySelector('#company-whatsapp a');
+  if (hasWhatsapp) whatsappLink.textContent = language === 'fr' ? 'Nous écrire sur WhatsApp' : 'Message us on WhatsApp';
+  document.getElementById('contact-pending').hidden = hasEmail || hasPhone || hasWhatsapp;
 
   langButton.addEventListener('click', () => setLanguage(language === 'fr' ? 'en' : 'fr'));
   toggle.addEventListener('click', () => {
