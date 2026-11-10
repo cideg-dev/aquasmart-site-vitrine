@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cideg-dev.github.io/aquasmart-site-vitrine/sitemap.xml

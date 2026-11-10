@@ -2,20 +2,43 @@
 
 ![Logo AquaSmart Control](./assets/logo-aquasmart.png)
 
-Site vitrine bilingue (français / anglais) d’AquaSmart Control SARL, conçu pour être hébergé gratuitement avec GitHub Pages.
+Site vitrine bilingue (français / anglais) d’AquaSmart Control SARL, hébergé gratuitement sur GitHub Pages. Aucun framework, aucune dépendance à installer, aucune requête vers un service tiers.
+
+**En ligne : <https://cideg-dev.github.io/aquasmart-site-vitrine/>**
 
 ## Contenu
 
-- `index.html` — contenu, métadonnées et structure accessible du site.
-- `styles.css` — mise en page responsive, sans framework ni dépendance à installer.
-- `script.js` — menu mobile, changement de langue, année automatique et formulaire de contact.
-- `assets/favicon.svg` — icône de l’onglet du navigateur.
-- `assets/logo-aquasmart.png` — logo de l’entreprise.
-- `assets/prototype-installe.jpg` et les cinq photos de composants dans `assets/` — images extraites des pages 20 à 25 du plan d’affaires fourni.
+- `index.html` — page d’accueil, 8 sections : héro, à propos, solution, offre & vente, technologie, ambition, équipe, contact.
+- `mentions-legales.html` — éditeur, RCCM, IFU, gérance, responsable de la publication, hébergement, données personnelles.
+- `styles.css` — mise en page responsive, palette et styles des composants.
+- `script.js` — menu mobile, changement de langue mémorisé, bouton WhatsApp, année automatique, formulaire de contact.
+- `robots.txt` et `sitemap.xml` — indexation.
+- `assets/favicon.svg` — icône de l’onglet (avec repli PNG).
+- `assets/logo-aquasmart.png` et `assets/logo-mark.png` — logos redimensionnés pour le web.
+- `assets/prototype-installe.jpg` et les cinq visuels de composants — visuels extraits du plan d’affaires, recompressés.
+- `assets/og-image.jpg` — image 1200 × 630 pour les aperçus WhatsApp, LinkedIn et Facebook.
 
-Le site est une vitrine statique. Le formulaire ouvre l’application de messagerie du visiteur avec un brouillon prérempli : aucun message n’est stocké ou envoyé par un serveur. Les photos montrent les visuels du prototype présentés dans le plan d’affaires ; les performances et les fonctionnalités décrites restent à valider.
+Le site est une vitrine statique. Le formulaire ouvre l’application de messagerie du visiteur avec un brouillon prérempli : aucun message n’est stocké ni envoyé par un serveur. Les visuels montrent le prototype ; les caractéristiques techniques sont données à titre indicatif.
 
-La stratégie de vente, les canaux commerciaux et les tarifs de référence proviennent du plan d’affaires et du plan financier fournis : 60 000 FCFA pour le dispositif, 15 000 FCFA comme repère de base d’installation, et maintenance annuelle sur devis. Le total dispositif + installation (75 000 FCFA) est indicatif, l’installation pouvant varier selon le site et l’équipement. Les modalités de paiement seront précisées sur le devis, car les documents ne fixent pas de moyen ni d’échéancier standard.
+## Coordonnées publiées
+
+Définies dans `script.js` (constante `contact`) et reprises dans la page légale :
+
+- e-mail : `aquasmartcontrole@gmail.com`
+- téléphone / WhatsApp : `+229 01 64 28 51 72`
+
+Le numéro alimente le lien d’appel et le bouton « Discuter sur WhatsApp » (lien `wa.me` avec message prérempli, dans la langue du visiteur).
+
+## Offre & vente
+
+La section `#vente` présente la démarche commerciale, les canaux de vente, le lancement progressif et des repères tarifaires issus du plan financier (60 000 FCFA pour le dispositif, 15 000 FCFA pour l’installation, maintenance sur devis). Les montants sont indicatifs et renvoient au devis.
+
+## Fonctionnement de la version bilingue
+
+- Le français est la langue par défaut.
+- Le choix de langue est mémorisé dans le navigateur (`localStorage`) et reflété dans l’URL : `?lang=en` / `?lang=fr`. Un lien partagé conserve donc la langue.
+- L’attribut `lang` du document, le titre, la description, Open Graph et Twitter sont mis à jour au changement de langue.
+- Le bouton de langue annonce sa cible dans la bonne langue (`lang="en"` sur le bouton quand il affiche « EN »).
 
 ## Prévisualiser sur son ordinateur
 
@@ -25,24 +48,22 @@ Depuis la racine du dépôt, lancez :
 python -m http.server 8000
 ```
 
-Ouvrez ensuite <http://localhost:8000>. Le site fonctionne sans installation. Les polices système sont utilisées pour éviter les requêtes vers un service tiers.
-
-## Configurer avant publication
-
-1. Vérifiez que l’adresse `aquasmartcontrole@gmail.com`, le numéro `+229 01 64 28 51 72` et le lien WhatsApp associé sont toujours les coordonnées professionnelles à publier.
-2. Vérifiez le nom de l’entreprise, l’adresse indiquée (Natitingou, Atacora, Bénin), les textes, les tarifs prévisionnels et le logo. Ne publiez que des informations exactes et autorisées.
-3. Le montant annuel de maintenance reste à confirmer ; le site indique donc « sur devis ».
-4. Les conditions de règlement devront être confirmées sur les devis avant la vente ; le site n’annonce pas de mode ni de calendrier de paiement non validé.
-5. Gardez à jour la mention « phase de conception et de prototypage » jusqu’à ce que les essais permettent de confirmer un autre état d’avancement.
-6. Le formulaire nécessite un logiciel de messagerie configuré chez le visiteur.
+Ouvrez ensuite <http://localhost:8000>. Les polices sont des polices système (aucun téléchargement de police) : Manrope et DM Sans sont utilisées si elles sont installées localement, sinon le site bascule sur la police système du visiteur.
 
 ## Publier avec GitHub Pages
 
-Le workflow autonome [`.github/workflows/deploy-site.yml`](./.github/workflows/deploy-site.yml) publie le site après un push sur `main` ou `master`. Il peut aussi être lancé manuellement depuis l’onglet **Actions**.
+Le workflow [`.github/workflows/deploy-site.yml`](./.github/workflows/deploy-site.yml) publie le dépôt à chaque push sur `main` ou `master`, ou manuellement depuis l’onglet **Actions**.
 
-1. Envoyez le dépôt sur GitHub.
-2. Ouvrez **Settings > Pages** et sélectionnez **GitHub Actions** comme source de publication.
-3. Vérifiez l’exécution du workflow **Deploy AquaSmart site** dans **Actions**.
-4. Une fois publié, GitHub Pages affiche l’adresse du site dans **Settings > Pages**. Pour un dépôt de projet, elle ressemble à `https://<utilisateur>.github.io/<nom-du-depot>/`.
+1. Poussez sur `main`.
+2. Vérifiez l’exécution du workflow **Deploy AquaSmart site** dans **Actions**.
+3. Le site est publié sur `https://cideg-dev.github.io/aquasmart-site-vitrine/` (source : **Settings > Pages > GitHub Actions**).
 
-Le site n’utilise pas d’URL absolues pour ses propres fichiers : il fonctionne donc aussi bien à la racine d’un domaine qu’à la racine d’un dépôt GitHub Pages.
+> Si un nom de domaine est ajouté, remplacez l’URL GitHub Pages dans `index.html` (`canonical`, `og:url`, `og:image`, Twitter), `mentions-legales.html` (`canonical`), `robots.txt` et `sitemap.xml`.
+
+Le site n’utilise pas d’URL absolues pour ses propres fichiers : il fonctionne aussi bien à la racine d’un domaine qu’à la racine du dépôt GitHub Pages.
+
+## Qualité
+
+- Contenu bilingue, contrastes vérifiés (WCAG AA sur les textes courants), navigation clavier, lien d’évitement, `prefers-reduced-motion`.
+- Images dimensionnées, chargées en différé hors écran, sans décalage de mise en page.
+- Le rapport d’audit complet se trouve dans le projet principal, `docs/audit_site_vitrine.md`.
